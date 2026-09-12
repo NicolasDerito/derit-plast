@@ -291,6 +291,31 @@ a:hover { color: var(--azul-claro); }
 .btn--grande { padding: 16px 32px; font-size: 1rem; }
 .btn--chico  { padding: 11px 20px; font-size: .875rem; }
 
+/* WhatsApp. Verde de la marca para que se reconozca de una; el texto va oscuro
+   porque blanco sobre ese verde no llega al contraste minimo (AA). */
+.btn--wa {
+  --btn-fondo: #25D366;
+  --btn-tinta: #0B3D22;
+  border-color: #25D366;
+}
+.btn--wa:hover {
+  --btn-fondo: #1FC65C;
+  border-color: #1FC65C;
+}
+.icono-wa { width: 1.2em; height: 1.2em; flex: none; }
+
+/* Marca cual de los telefonos es el de WhatsApp */
+.etiq-wa {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--pill);
+  background: rgba(37, 211, 102, .16);
+  color: #0B5A2E;
+  font-size: .75rem;
+  font-weight: 600;
+  vertical-align: 1px;
+}
+
 .btn[disabled] {
   cursor: not-allowed;
   opacity: .55;
@@ -777,6 +802,12 @@ a:hover { color: var(--azul-claro); }
 }
 .datos-contacto__lista a { font-weight: 500; overflow-wrap: anywhere; }
 .datos-contacto .btn { margin-top: 28px; width: 100%; }
+.datos-contacto__nota {
+  margin-top: 10px;
+  font-size: .8125rem;
+  color: var(--texto-suave);
+  text-align: center;
+}
 
 .corta { font-size: .9375rem; overflow-wrap: anywhere; }
 
@@ -882,7 +913,8 @@ a:hover { color: var(--azul-claro); }
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
-.barra-cta .btn { width: 100%; }
+.barra-cta__fila { display: flex; gap: 10px; }
+.barra-cta .btn { flex: 1 1 0; min-width: 0; width: auto; padding-inline: 12px; }
 
 /* ------------------------------------------------------------- 20 · MOTION */
 .js .reveal {
