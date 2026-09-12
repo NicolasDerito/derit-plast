@@ -189,6 +189,18 @@ a:hover { color: var(--azul-claro); }
 
 .marca { display: flex; align-items: center; gap: 12px; color: inherit; }
 .marca:hover { color: inherit; }
+
+/* Logo real de la marca (recortado de la foto del cartel y depurado).
+   La altura la fija el CSS; el ancho sale solo por la proporcion del archivo. */
+.marca__logo {
+  display: block;
+  height: 34px;
+  width: auto;
+  flex: none;
+}
+@media (max-width: 26rem) {
+  .marca__logo { height: 28px; }
+}
 .marca__sigla {
   display: grid;
   place-items: center;

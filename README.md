@@ -6,6 +6,7 @@ Maqueta del sitio de Derit Plast (fábrica de plástico, Florencio Varela).
 
 - `index.html` — home
 - `styles.css` — estilos
+- `logo-derit.png` — logo de la marca (depurado de la foto del cartel)
 - `favicon.svg` — icono
 
 HTML y CSS puro, sin build. Para verlo local:
