@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Derit Plast — Fábrica de bolsas de plástico e inyección · Florencio Varela</title>
 <meta name="description" content="Derit Plast es una fábrica de plástico en Florencio Varela. Fabricamos bolsas y secadores de piso, y le vendemos a comercios, distribuidores e industrias de todo el país.">
-<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
@@ -23,10 +22,7 @@
 
 <a class="salto" href="#contenido">Saltar al contenido</a>
 
-<div class="aviso-maqueta" role="note">
-  <span class="aviso-maqueta__pill">MAQUETA · VERSIÓN EN PRUEBA</span>
-  <span class="aviso-maqueta__texto">Página de revisión, todavía no es el sitio final. El formulario no envía y faltan fotos.</span>
-</div>
+
 
 <header class="cabecera">
   <div class="contenedor cabecera__barra">
@@ -366,14 +362,10 @@
 
       <div class="contacto__grilla">
 
-        <form class="form reveal" action="#" method="post" aria-describedby="form-aviso">
+        <form class="form reveal" action="mailto:Derito-cristian@hotmail.com" method="post" enctype="text/plain" aria-describedby="form-aviso">
           <p class="form__aviso" id="form-aviso">
-            <span class="form__aviso-pill">NO ENVÍA</span>
-            <span>
-              <strong>Este formulario todavía no envía nada.</strong> Es una maqueta: los campos
-              se pueden escribir, pero el botón está desactivado. Para pedir una cotización de
-              verdad, usá el teléfono o el email de al lado.
-            </span>
+            <span class="form__aviso-pill">COTIZACIÓN</span>
+            <span>Contanos qué necesitás y te pasamos el precio. Se envía por WhatsApp o por email.</span>
           </p>
 
           <div class="form__campos">
@@ -426,11 +418,12 @@
           </div>
 
           <div class="form__pie">
-            <button class="btn btn--rojo btn--grande" type="submit" disabled aria-disabled="true">
-              Enviar (desactivado en la maqueta)
+            <button class="btn btn--rojo btn--grande" type="submit">
+              Enviar consulta
             </button>
             <p class="form__pie-nota">
-              Todavía no hay a dónde enviar: el formulario se conecta cuando el sitio se publique.
+              El botón te lleva a WhatsApp con los datos ya cargados. También podés escribirnos por email a
+              <a href="mailto:Derito-cristian@hotmail.com">Derito-cristian@hotmail.com</a>.
             </p>
           </div>
         </form>
@@ -496,13 +489,12 @@
 
   <div class="contenedor">
     <p class="pie__legal">
-      MAQUETA · VERSIÓN EN PRUEBA — página de revisión, todavía no es el sitio final. Los datos
-      que aparecen son los que confirmó el cliente.
+      Derit Plast — Fábrica de bolsas de plástico e inyección · Florencio Varela, Buenos Aires.
     </p>
   </div>
 </footer>
 
-<p class="badge-maqueta">MAQUETA · VERSIÓN EN PRUEBA</p>
+
 
 <div class="barra-cta">
   <div class="barra-cta__fila">
@@ -562,5 +554,19 @@
 })();
 </script>
 
+
+<script>
+(function () {
+  var f = document.querySelector('.form');
+  if (!f || !window.FormData) return;
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var d = new FormData(f), lineas = [];
+    d.forEach(function (v, k) { if (String(v).trim()) lineas.push(k + ': ' + v); });
+    var txt = 'Consulta desde la web \u2014 Derit Plast\n' + lineas.join('\n');
+    window.open('https://wa.me/5491128740141?text=' + encodeURIComponent(txt), '_blank');
+  });
+})();
+</script>
 </body>
 </html>
